@@ -1,9 +1,13 @@
-import Image from 'next/image'
+import Categoryies from '@/components/Category/Categoryies'
+import Featured from '@/components/Featured/Featured'
+import Hero from '@/components/Hero/Hero'
 
 export default function Home() {
   return (
     <main>
-      homePage
+      <Hero />
+      <Categoryies />
+      <Featured />
     </main>
   )
 }

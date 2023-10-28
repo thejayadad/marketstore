@@ -4,10 +4,14 @@ import React from 'react'
 import { useState } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { signOut, useSession } from "next-auth/react";
+
 
 
 const AuthLinks = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { status } = useSession();
+
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -26,9 +30,9 @@ const AuthLinks = () => {
 
   return (
     <div className="md:flex flex items-center space-x-4">
-        <Link href={'/'}>
+        <span onClick={signOut}>
         Logout
-        </Link>
+        </span>
       <div 
       style={{zIndex: 100}}
       className="md:hidden">
